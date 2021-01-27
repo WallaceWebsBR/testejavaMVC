@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class RotasController {
     
-    @RequestMapping("/home")
+    @RequestMapping("/")
     public String homepage(){
         return "index";
     }
