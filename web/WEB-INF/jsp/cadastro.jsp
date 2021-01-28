@@ -21,12 +21,18 @@
         <form method="Post">
                 <div class="form-group">
                     <h1 class="display-4">Tipo de Processo</h1>
-                    <div class="form-group row">
-  <div class="col-xs-4">
-    <label for="ex1">Nome</label>
-    <input class="form-control" id="ex1" name="tipoprocesso" type="text">
-  </div> </div>
-                    <fieldset><legend>Tipos de Processos Cadastrados</legend>
+        <div class="col-md-6">
+            <div class="row">
+    <div class="col-sm">
+            Nome: <input class="form-control" name="tipoprocesso" type="text">
+    </div>
+                
+    <div class="col-sm">
+             <input class="btn btn-primary" type="submit" value="Cadastrar" style="margin-top: 22px">
+    </div>
+    </div>
+     
+            </div>         <fieldset>
                           <table class="table table-hover">
                             <thead>
                               <tr>
