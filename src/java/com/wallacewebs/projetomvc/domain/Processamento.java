@@ -10,6 +10,8 @@ package com.wallacewebs.projetomvc.domain;
  * @author WallaceWebs
  */
 public class Processamento {
+    
+    private int id;
     private String tipoprocesso;
     private String nomeprocesso;
     private String numeroprocesso;

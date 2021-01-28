@@ -18,7 +18,7 @@
         <div class="container">
             <div class="jumbotron">
         <h1>Cadastro de Processos v1.0</h1>
-        <form method="Post">
+        <form method="post">
                 <div class="form-group">
                     <h1 class="display-4">Tipo de Processo</h1>
         <div class="col-md-6">

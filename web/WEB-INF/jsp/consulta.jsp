@@ -13,6 +13,6 @@
         <link href="res/estilo.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <h1>Dados do Processo</h1>
+        <h1>Dados do Processo: ${numeroprocesso}</h1>
     </body>
 </html>
