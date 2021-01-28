@@ -15,18 +15,21 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     </head>
     <body><div class="container">
-        <h1>Cadastro de Processos v1.0</h1>
-            <fieldset><legend>Busca por Número</legend>
-            <div class="form-group row">
+        <h1>Controle de Processos v1.0</h1>
+        <div class="col-md-6">
+            <div class="form-group">
+            
                 <form action="consulta">
                 <div class="col-xs-2">
-                    <label for="ex1">Número</label>
-                    <input class="form-control" name="numeroprocesso" type="text">
-                    <input class="btn btn-primary" type="submit" value="Consultar">
+                    Número do Processo
+                    <input class="form-control" name="numeroprocesso" type="text" required style="margin-bottom: 10px">
+                    <input class="btn btn-primary" type="submit" value="Consultar" >
+                    <input class="btn btn-primary" type="reset" value="Limpar">    
+                    <input class="btn btn-primary" type="button" value="Cadastrar" onclick="location.href = '/cadastro';">
                 </div>
                 </form>
+               </div> 
             </div>
-            </fieldset>
         </div>
     </body>
 </html>
