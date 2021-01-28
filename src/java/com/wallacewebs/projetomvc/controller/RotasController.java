@@ -1,4 +1,4 @@
-package br.com.rotas.controller;
+package com.wallacewebs.projetomvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,12 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class RotasController {
     
-    @RequestMapping("/")
+    @RequestMapping("/index")
     public String homepage(){
         return "index";
     }
     @RequestMapping("/cadastro")
-    public String cadastro(){
+    public String cadastros(){
         return "cadastro";
+    }
+    @RequestMapping("/consulta")
+    public String consultas(){
+        return "consulta";
     }
 }
