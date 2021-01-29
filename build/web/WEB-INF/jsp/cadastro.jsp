@@ -18,13 +18,13 @@
         <div class="container">
             <div class="jumbotron">
         <h1>Cadastro de Processos v1.0</h1>
-        <form method="post">
+        <form method="POST" action="cadastrar">
                 <div class="form-group">
                     <h1 class="display-4">Tipo de Processo</h1>
         <div class="col-md-6">
             <div class="row">
     <div class="col-sm">
-            Nome: <input class="form-control" name="tipoprocesso" type="text">
+            Nome: <input class="form-control" type="text">
     </div>
                 
     <div class="col-sm">
@@ -56,12 +56,17 @@
                           </table>
                     </fieldset>
                     <h1>Processo</h1>
-                    Nome: <input type="text" name="tipoprocesso" class="form-control">
-                    
+                    Tipo de Processo: <input type="text" name="tipoprocesso" class="form-control">
+                    Nome Processo: <input type="text" name="nomeprocesso" class="form-control">
+                    Numero Processo: <input type="text" name="numeroprocesso" class="form-control">
+                    Data de Entrada: <input type="date" name="dataentrada" class="form-control">
+                    Valor do Recurso: <input type="text" name="valorrecurso" class="form-control">
+                    Objetivo <input type="text" name="objetivo" class="form-control">
                     <input type="submit" label="Enviar">
             </form>
             </div>
         </div>
         </div>
+        ${dados}
     </body>
 </html>
