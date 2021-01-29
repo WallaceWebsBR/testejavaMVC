@@ -45,8 +45,9 @@ public class RotasController {
         return "cadastro";
      }
     @RequestMapping("/consulta")
-    public String consultas(){
-                
+    public String consultas(Model model, Processamento search) throws SQLException, ClassNotFoundException{
+        CadastroDAO dao = new CadastroDAO();
+        model.addAttribute("lista", dao.consultar(search));
         return "consulta"; 
     }
 }

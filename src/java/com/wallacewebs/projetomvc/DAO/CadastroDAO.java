@@ -56,4 +56,26 @@ public class CadastroDAO {
         }
         return lista;
     }
+        public List<Processamento> consultar(Processamento search) throws SQLException, ClassNotFoundException{
+        List<Processamento> lista = new ArrayList<>();
+        ConexaoJDBC conn = new ConexaoJDBC();
+        
+        String sql = "SELECT * FROM processos WHERE numeroprocesso LIKE ?";
+        PreparedStatement ps = conn.getConexao().prepareStatement(sql);
+        ps.setString(1,"%" + search.getNumeroprocesso() + "%");  
+        ResultSet rs = ps.executeQuery();
+        
+        while(rs.next()){
+        Processamento dado = new Processamento();
+        dado.setId(rs.getInt("id"));
+        dado.setTipoprocesso(rs.getString("tipoprocesso"));
+        dado.setNomeprocesso(rs.getString("nomeprocesso"));
+        dado.setNumeroprocesso(rs.getString("numeroprocesso"));
+        dado.setDataentrada(rs.getString("dataentrada"));
+        dado.setValorrecurso(rs.getString("valorrecurso"));
+        dado.setObjetivo(rs.getString("objetivo"));
+        lista.add(dado);
+        }
+        return lista;
+    }
 }
