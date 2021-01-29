@@ -25,7 +25,7 @@
                     <input class="form-control" name="numeroprocesso" type="text" required style="margin-bottom: 10px">
                     <input class="btn btn-primary" type="submit" value="Consultar" >
                     <input class="btn btn-primary" type="reset" value="Limpar">    
-                    <input class="btn btn-primary" type="button" value="Cadastrar" onclick="location.href = '/cadastro';">
+                    <input class="btn btn-primary" type="button" value="Cadastrar Processo" onclick="location.href = '/cadastro';">
                 </div>
                 </form>
                </div> 

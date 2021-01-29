@@ -67,6 +67,23 @@ public class CadastroDAO {
         ps.setString(1, tipo.getTipoprocesso());
         ps.setInt(2, tipo.getId());
         ps.execute();
+    }   
+        //
+        // UPDATE TIPOS DE PROCESSO
+        //
+        public void editarProcesso(Processamento tipo) throws SQLException, ClassNotFoundException{
+        ConexaoJDBC conn = new ConexaoJDBC();
+        
+        String sql = "UPDATE `processos` SET `tipoprocesso` = ?, `nomeprocesso` = ?, `numeroprocesso` = ?, `dataentrada` = ?, `valorrecurso` = ?, `objetivo` = ? WHERE `processos`.`id` = ?;";
+        PreparedStatement ps = conn.getConexao().prepareStatement(sql);
+        ps.setString(1, tipo.getTipoprocesso());
+        ps.setString(2, tipo.getNomeprocesso());
+        ps.setString(3, tipo.getNumeroprocesso());
+        ps.setString(4, tipo.getDataentrada());
+        ps.setString(5, tipo.getValorrecurso());
+        ps.setString(6, tipo.getObjetivo());
+        ps.setInt(7, tipo.getId());
+        ps.execute();
     }
         
         //
@@ -114,4 +131,41 @@ public class CadastroDAO {
         }
         return lista;
     }
+        //
+        // CONSULTAR PROCESSO PELO ID
+        //
+        public List<Processamento> consultarByID(Processamento search) throws SQLException, ClassNotFoundException{
+        List<Processamento> dados = new ArrayList<>();
+        ConexaoJDBC conn = new ConexaoJDBC();
+        
+        String sql = "SELECT * FROM processos WHERE id LIKE ?";
+        PreparedStatement ps = conn.getConexao().prepareStatement(sql);
+        ps.setInt(1, search.getId());  
+        ResultSet rs = ps.executeQuery();
+        
+        while(rs.next()){
+        Processamento dado = new Processamento();
+        dado.setId(rs.getInt("id"));
+        dado.setTipoprocesso(rs.getString("tipoprocesso"));
+        dado.setNomeprocesso(rs.getString("nomeprocesso"));
+        dado.setNumeroprocesso(rs.getString("numeroprocesso"));
+        dado.setDataentrada(rs.getString("dataentrada"));
+        dado.setValorrecurso(rs.getString("valorrecurso"));
+        dado.setObjetivo(rs.getString("objetivo"));
+        dados.add(dado);
+        }
+        return dados;
+        }
+        //
+        // DELETAR PROCESSO PELO ID
+        //
+        public void deletarByID(Processamento id) throws SQLException, ClassNotFoundException{
+        ConexaoJDBC conn = new ConexaoJDBC();
+        
+        String sql = "DELETE FROM `processos` WHERE `processos`.`id` = ?";
+        PreparedStatement ps = conn.getConexao().prepareStatement(sql);
+        ps.setInt(1, id.getId());  
+        ResultSet rs = ps.executeQuery();
+        
+        }
 }

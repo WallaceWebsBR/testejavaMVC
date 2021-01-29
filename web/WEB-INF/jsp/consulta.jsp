@@ -35,12 +35,25 @@
                     <td>${tp.numeroprocesso}</td>
                     <td>${tp.nomeprocesso}</td>
                     <td>${tp.dataentrada}</td>
-                    <td>${tp.valorrecurso}</td>
+                    <td>R$ ${tp.valorrecurso}</td>
                     <td>${tp.objetivo}</td>
                 </tr>
                 </link:forEach>
                 </tbody>
             </table>
+            <h1>Editar Processo:</h1>
+            <div class="col-md-6">
+            <div class="row">
+                    <div class="col-sm">
+                        <form method="get" action="editar">
+                            Digite a ID: <input class="form-control" type="text" name="id" required>
+                             <button type="submit" class="btn btn-primary">Editar Processo</button>    
+                        </form>
+                </div>
+            </div>
+            </div><br><br>
+            <input class="btn btn-primary" type="button" value="Cadastrar Processo" onclick="location.href = '/cadastro'">
+            <input class="btn btn-primary" type="button" value="Voltar" onclick="location.href = '/index'">
         </div>
     </body>
 </html>
