@@ -10,7 +10,8 @@ package com.wallacewebs.projetomvc.domain;
  * @author WallaceWebs
  */
 public class Processamento {
-    
+
+ 
     private int id;
     private String tipoprocesso;
     private String nomeprocesso;
@@ -66,5 +67,14 @@ public class Processamento {
     public void setObjetivo(String objetivo) {
         this.objetivo = objetivo;
     }
+    
+    public int getId() {
+        return id;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+
 }
 
