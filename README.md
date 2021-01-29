@@ -8,7 +8,7 @@ projetomvc.war -> Arquivo compilado para servidor Apache TOMCAT 8
 
 ## Ajuste para conexao com banco
 
-\src\java\com\wallacewebs\projetomvc\conexao\ConexaoJDBC.java -> Substituir na linha 20 o usuario e senha do Banco de Dados.
+\src\java\com\wallacewebs\projetomvc\conexao\ConexaoJDBC.java -> Substituir na linha 20 o usuario e senha do Banco de Dados. Alem de alterar a string de conexão para o nome do banco de dados.
 
 WallaceWebs - Todos os direitos reservados ©2021
 
