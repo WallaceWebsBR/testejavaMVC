@@ -35,7 +35,7 @@
                     <input class="btn btn-primary" type="submit" label="Editar">
                     <input class="btn btn-primary" type="reset" value="Resetar">
                     <input class="btn btn-danger" type="submit" value="Deletar Processo" onclick="location.href = '/deletarprocesso?id=${id.id}'">
-                    <input class="btn btn-primary" type="button" value="Voltar" onclick="window.location=document.referrer">
+                    <input class="btn btn-primary" type="button" value="Voltar" onclick="window.location='/index'">
                     </link:forEach>
             </form>
             </div>

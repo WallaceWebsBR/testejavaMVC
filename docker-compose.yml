@@ -1,21 +1,20 @@
 version: '3'
-services: 
-    db:
-        image: mysql:5.7
-        container_name: mysql
-        restart: always
-        environment:
-         MYSQL_ROOT_PASSWORD: root
-         MYSQL_USER: root
-         MYSQL_USER: root
-        volumes:
-        - ./database:/docker-entrypoint-initdb.d
-        ports:
-        - "3306:3306"
-    web:
-        container_name: tomcat
-        build: ./dist/
-        ports:
-         - "8080:8080"
-        depends_on:
-        - db
+services:
+   mysql:
+     image: mysql:5.7
+     container_name: mysql
+     restart: always
+     environment:
+      MYSQL_ROOT_PASSWORD: root 
+     volumes:
+     - ./database/:/docker-entrypoint-initdb.d
+     ports:
+     - "3306:3306"
+
+   tomcat:
+     image: tomcat
+     container_name: tomcat
+     volumes:
+     - ./dist/projetomvc.war:/usr/local/tomcat/webapps/ROOT.war
+     ports:
+     - "8080:8080"

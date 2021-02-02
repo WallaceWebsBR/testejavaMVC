@@ -5,7 +5,6 @@
  */
 package com.wallacewebs.projetomvc.conexao;
 
-import com.mysql.jdbc.Driver;
 import java.sql.*;
 /**
  *
@@ -16,8 +15,8 @@ public class ConexaoJDBC {
     
     private void conectar() throws SQLException, SQLException, ClassNotFoundException{
         System.out.println("Conectando com o Banco de Dados...");
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = (Connection) DriverManager.getConnection("jdbc:mysql://remotemysql.com/7LGovYAoXW", "7LGovYAoXW", "kyrhiPIsV3");
+            Class.forName("com.mysql.cj.jdbc.Driver");  
+            conn = (Connection) DriverManager.getConnection("jdbc:mysql://mysql/processodb", "root", "root");
     }
     
     public Connection getConexao() throws SQLException, ClassNotFoundException{

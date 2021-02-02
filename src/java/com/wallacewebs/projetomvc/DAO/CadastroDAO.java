@@ -33,6 +33,7 @@ public class CadastroDAO {
         ps.setString(5, cadastro.getValorrecurso());
         ps.setString(6, cadastro.getObjetivo());
         ps.execute();
+        ps.close();
     }
         //
         // CADASTRO TIPOS DE PROCESSO
@@ -44,6 +45,7 @@ public class CadastroDAO {
         PreparedStatement ps = conn.getConexao().prepareStatement(sql);
         ps.setString(1, tipo.getTipoprocesso());
         ps.execute();
+        ps.close();
     }
         //
         // REMOCAO TIPOS DE PROCESSO
@@ -55,6 +57,7 @@ public class CadastroDAO {
         PreparedStatement ps = conn.getConexao().prepareStatement(sql);
         ps.setInt(1, tipo.getId());
         ps.execute();
+        ps.close();
     }
         //
         // UPDATE TIPOS DE PROCESSO
@@ -67,6 +70,7 @@ public class CadastroDAO {
         ps.setString(1, tipo.getTipoprocesso());
         ps.setInt(2, tipo.getId());
         ps.execute();
+        ps.close();
     }   
         //
         // UPDATE TIPOS DE PROCESSO
@@ -84,6 +88,7 @@ public class CadastroDAO {
         ps.setString(6, tipo.getObjetivo());
         ps.setInt(7, tipo.getId());
         ps.execute();
+        ps.close();
     }
         
         //
@@ -104,6 +109,7 @@ public class CadastroDAO {
         dado.setTipoprocesso(rs.getString("tipoprocesso"));
         lista.add(dado);
         }
+        rs.close();
         return lista;
     }
         //
@@ -129,6 +135,7 @@ public class CadastroDAO {
         dado.setObjetivo(rs.getString("objetivo"));
         lista.add(dado);
         }
+        rs.close();
         return lista;
     }
         //
@@ -154,6 +161,7 @@ public class CadastroDAO {
         dado.setObjetivo(rs.getString("objetivo"));
         dados.add(dado);
         }
+        rs.close();
         return dados;
         }
         //
@@ -165,7 +173,7 @@ public class CadastroDAO {
         String sql = "DELETE FROM `processos` WHERE `processos`.`id` = ?";
         PreparedStatement ps = conn.getConexao().prepareStatement(sql);
         ps.setInt(1, id.getId());  
-        ResultSet rs = ps.executeQuery();
-        
+        ps.execute();
+        ps.close();
         }
 }
