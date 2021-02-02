@@ -20,7 +20,8 @@
         <h1>Edição de Processos</h1>
         <div class="container">
             <div class="form-group">
-             <form method="POST" action="cadastrar"><link:forEach items="${dados}" var="tp">
+             <form method="POST" action="editaprocesso">
+                 <link:forEach items="${dados}" var="tp">
                     <h1>Processo ID:${id.id}</h1>
                     Tipo de Processo:
                     <select class="form-select" data-size="2" name="tipoprocesso">
@@ -32,9 +33,10 @@
                     Data de Entrada: <input type="date" name="dataentrada" class="form-control" value="${tp.dataentrada}">
                     Valor do Recurso: R$<input type="text" name="valorrecurso" class="form-control" value="${tp.valorrecurso}">
                     Objetivo <input type="text" name="objetivo" class="form-control" value="${tp.objetivo}">
+                    <input type="hidden" name="id" value="${id.id}">
                     <input class="btn btn-primary" type="submit" label="Editar">
                     <input class="btn btn-primary" type="reset" value="Resetar">
-                    <input class="btn btn-danger" type="submit" value="Deletar Processo" onclick="location.href = '/deletarprocesso?id=${id.id}'">
+                    <input class="btn btn-danger" value="Deletar Processo" onclick="location.href = '/deletarprocesso?id=${id.id}'">
                     <input class="btn btn-primary" type="button" value="Voltar" onclick="window.location='/index'">
                     </link:forEach>
             </form>
